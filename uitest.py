@@ -27,19 +27,13 @@ class TestState(State):
 
 
 class UITester:
-    def __init__(self, game: Game, elements: list[UICanvas]):
+    def __init__(self, game: Game, elements: UICanvas):
         self.game = game
         state = TestState(self.game)
         state.canvas = elements
         self.game.state_stack.push(state)
         while self.game.running:
             self.game.game_loop()
-
-    def update(self):
-        self.game.update()
-
-    def render(self):
-        self.game.render()
 
 
 if __name__ == '__main__':
@@ -99,4 +93,4 @@ if __name__ == '__main__':
     # button2.y += 40
     # print(button)
     # print(button2)
-    ui_tester = UITester(g, [canvas])
+    ui_tester = UITester(g, canvas)

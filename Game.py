@@ -22,6 +22,7 @@ class Game:
         p.init()
         p.mixer.init()
         # self.GAME_W, self.GAME_H = 640, 320
+        # self.SCREEN_W, self.SCREEN_H = 960, 540
         # self.GAME_W, self.GAME_H = 1920, 1080
         # self.SCREEN_W, self.SCREEN_H = 1920, 1080
         self.GAME_W, self.GAME_H = 1280, 720
@@ -35,7 +36,7 @@ class Game:
         self.jump_action_changed: int = 0
         self.clicked_sx: int = 0
         self.clicked_dx: int = 0
-        self.dt, self.prev_time = 0, 0
+        self.dt = self.prev_time = time.time()
         self.state_stack = Stack()
 
         self.tweener = TweenManager()
@@ -158,7 +159,7 @@ class Game:
         # self.font_medium = p.font_medium.Font(os.path.join(self.font_dir, "PressStart2P-vaV7.ttf"), 20)
         self.font_medium = p.font.Font(os.path.join(self.font_dir, "Comfortaa-Regular.ttf"), 20)
         self.font_big = p.font.Font(os.path.join(self.font_dir, "Comfortaa-Regular.ttf"), 40)
-        self.font_small = p.font.Font(os.path.join(self.font_dir, "Comfortaa-Regular.ttf"), 10)
+        self.font_small = p.font.Font(os.path.join(self.font_dir, "Comfortaa-Regular.ttf"), 12)
         self.font_tiny = p.font.Font(os.path.join(self.font_dir, "Comfortaa-Regular.ttf"), 5)
         # self.font_big_bold = p.font.Font(os.path.join(self.font_dir, "Comfortaa-Bold.ttf"), 40)
         # self.font_medium_bold = p.font.Font(os.path.join(self.font_dir, "Comfortaa-Bold.ttf"), 20)
